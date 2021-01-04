@@ -51,7 +51,7 @@ namespace CommandHelper.Data.InterfacesAndRepos
 
         public IEnumerable<Lecturer> GetAllCommands()
         {
-            return _context.Lecturers.Include(x => x.Events).Include(x => x.LecturePlatforms).ThenInclude(x => x.Platform).ToList();
+            return _context.Lecturers.Include(x => x.Events).ToList();
         }
 
         public Lecturer GetCommandById(int id)

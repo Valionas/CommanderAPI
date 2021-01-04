@@ -29,7 +29,7 @@ namespace CommandHelper.Controllers
             var tutorialItems = _repository.GetAllCommands();          
             return tutorialItems;
         }
-        //GET api//{id}
+        //GET api/tutorials/{id}
         [HttpGet("{id}")]
         public Tutorial GetCommandById(int id)
         {
@@ -52,7 +52,7 @@ namespace CommandHelper.Controllers
             }
             return BadRequest();
         }
-        //DELETE api/commands/{id}
+        //DELETE api/tutorial/{id}
         [HttpDelete("{id}")]
         public ActionResult DeleteCommand(int id)
         {
