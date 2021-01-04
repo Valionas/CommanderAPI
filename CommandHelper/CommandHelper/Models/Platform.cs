@@ -10,8 +10,8 @@ namespace CommandHelper.Models
     {
         public int Id { get; set; }
         public string PlatformName { get; set; }
-        [JsonIgnore]
-        public ICollection<LecturerPlatform> LecturePlatforms { get; set; }
+       
+        
 
     }
 }

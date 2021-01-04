@@ -49,6 +49,7 @@ namespace CommandHelper
             services.AddScoped<ITutorialRepo, SQLTutorialRepo>();
             services.AddScoped<ILecturer, SQLLecturer>();
             services.AddScoped<IEventcs, SQLEventRepo>();
+            services.AddScoped<IPlatform, SQLPlatform>();
             services.AddScoped<CommandService>();
             services.AddScoped<UserService>();
             services.AddAuthentication(opt =>
