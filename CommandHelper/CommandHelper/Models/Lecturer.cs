@@ -12,7 +12,7 @@ namespace CommandHelper.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-       
+         [JsonIgnore]
         public ICollection<LecturerPlatform> LecturePlatforms { get; set; }
        
         public ICollection<Event> Events { get; set; }
