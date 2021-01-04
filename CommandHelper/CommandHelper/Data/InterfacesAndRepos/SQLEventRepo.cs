@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandHelper.Data.InterfacesAndRepos
 {
-    public class SQLEventRepo
+    public class SQLEventRepo:IEventcs
     {
         private CommanderContext _context;
 
@@ -59,6 +59,11 @@ namespace CommandHelper.Data.InterfacesAndRepos
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
+        }
+
+        public void UpdateCommand(Event cmd)
+        {
+            throw new NotImplementedException();
         }
     }
 }
