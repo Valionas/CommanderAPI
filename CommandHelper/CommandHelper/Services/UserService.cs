@@ -106,11 +106,13 @@ namespace CommandHelper.Services
                 issuer,
                 audience,
                 claim,
-                expires: DateTime.Now.AddMinutes(accessExpiration),
+                expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: credentials
             );
             string token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
-
+            SecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JwtSecurityToken decodedJsonWebToken = handler.ReadToken(token) as JwtSecurityToken;
+            DateTime jwtExpirationDate = decodedJsonWebToken.ValidTo.ToLocalTime();
             return token;
         }
         private string Hash(string password)

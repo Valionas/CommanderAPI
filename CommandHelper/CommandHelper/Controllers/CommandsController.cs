@@ -52,7 +52,7 @@ namespace CommandHelper.Controllers
         {
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             var result = _repository.CreateCommand(commandModel);
-            if (result == 1)
+            if (result == 2)
             {
                 return Ok(commandModel);
             }

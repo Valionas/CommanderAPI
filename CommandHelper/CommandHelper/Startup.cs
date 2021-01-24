@@ -59,18 +59,20 @@ namespace CommandHelper
             })
    .AddJwtBearer(options =>
    {
+      
        options.TokenValidationParameters = new TokenValidationParameters
        {
-           ValidateIssuer = false,
+           ValidateIssuer =false,
            ValidateAudience = false,
-           ValidateLifetime = false,
-           ValidateIssuerSigningKey = false,
+           ValidateLifetime = true,
+           ValidateIssuerSigningKey = true,
+           ClockSkew = TimeSpan.Zero,
            ValidIssuer = "http://localhost:5000",
            ValidAudience = "http://localhost:5000",
            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["secret"]))
        };
    });
-            services.AddAuthorization();
+           
 
 
         }

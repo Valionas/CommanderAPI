@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CommandHelper.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class LecturersController : ControllerBase
@@ -25,6 +25,7 @@ namespace CommandHelper.Controllers
             _mapper = mapper;
         }
         //GET api/lecturers
+        [Authorize]
         [HttpGet]
         public IEnumerable<Lecturer> GetAllCommands()
         {

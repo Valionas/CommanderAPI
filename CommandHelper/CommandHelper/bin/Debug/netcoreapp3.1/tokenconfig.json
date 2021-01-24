@@ -1,6 +1,6 @@
 {
   "secret": "theAbsoluteSecretKeyPass16",
-  "Issuer": "https://localhost:5001",
-  "audience": "https://localhost:5001",
+  "Issuer": "https://localhost:5000",
+  "audience": "https://localhost:5000",
   "AccessExpiration": "60"
 }
