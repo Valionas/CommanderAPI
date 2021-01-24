@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommandHelper.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace CommandHelper.DtoModels
         [Required]
         public string Line { get; set; }
         [Required]
-        public string Platform { get; set; }
+        public Platform Platform { get; set; }
     }
 }

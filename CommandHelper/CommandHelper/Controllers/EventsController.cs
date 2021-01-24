@@ -50,6 +50,7 @@ namespace CommandHelper.Controllers
             {
                 return Ok(commandModel);
             }
+            _repository.SaveChanges();
             return BadRequest();
         }
         //DELETE api/events/{id}

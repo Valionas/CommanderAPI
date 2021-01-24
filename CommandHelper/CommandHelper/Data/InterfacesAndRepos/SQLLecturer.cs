@@ -26,7 +26,7 @@ namespace CommandHelper.Data.InterfacesAndRepos
             }
 
 
-            var result = _context.Lecturers.Where(x => x.FirstName == lec.FirstName && x.LastName == lec.LastName && x.Email == lec.Email).FirstOrDefault();
+            var result = _context.Lecturers.Where(x => x.FirstName == lec.FirstName && x.LastName == lec.LastName && x.Email == lec.Email).Include(x => x.Events).FirstOrDefault();
             if (result == null)
             {
                 _context.Lecturers.Add(lec);

@@ -20,6 +20,7 @@ namespace CommandHelper.Profiles
             CreateMap<Platform, PlatformDto>().ReverseMap();
             CreateMap<DtoTutorialCreate, Tutorial>();
             CreateMap<DtoLecturerCreate, Lecturer>();
+            CreateMap<EventDTO, Event>();
 
         }
     }

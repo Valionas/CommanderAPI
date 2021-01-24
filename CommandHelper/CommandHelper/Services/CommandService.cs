@@ -54,41 +54,10 @@ namespace CommandHelper.Services
             return null;
         }
 
-        //PUT api/commands/{id}
+     
        
-        public int UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
-        {
-            var commandModelFromRepo = _repository.GetCommandById(id);
-            if (commandModelFromRepo == null)
-            {
-                return 0;
-            }
-            _mapper.Map(commandUpdateDto, commandModelFromRepo);
-            _repository.UpdateCommand(commandModelFromRepo);
-            _repository.SaveChanges();
+      
 
-            return 1;
-        }
-
-        //PATCH api/commands/{id}
-       
-        public int PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDoc)
-        {
-            var commandModelFromRepo = _repository.GetCommandById(id);
-            if (commandModelFromRepo == null)
-            {
-                return 0;
-            }
-
-            var commandToPatch = _mapper.Map<CommandUpdateDto>(commandModelFromRepo);
-            patchDoc.ApplyTo(commandToPatch);
-            
-
-            _mapper.Map(commandToPatch, commandModelFromRepo);
-            _repository.UpdateCommand(commandModelFromRepo);
-            _repository.SaveChanges();
-            return 1;
-        }
 
         //DELETE api/commands/{id}
   
