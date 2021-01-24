@@ -25,7 +25,7 @@ namespace CommandHelper.Controllers
             _mapper = mapper;
         }
         //GET api/lecturers
-        [Authorize]
+       
         [HttpGet]
         public IEnumerable<Lecturer> GetAllCommands()
         {
@@ -51,7 +51,7 @@ namespace CommandHelper.Controllers
             var result = _repository.CreateCommand(commandModel);
             if (result == 1)
             {
-                return Ok(commandModel);
+                return Ok();
             }
             return BadRequest();
         }

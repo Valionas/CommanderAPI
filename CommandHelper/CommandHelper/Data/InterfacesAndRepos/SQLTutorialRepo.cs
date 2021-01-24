@@ -27,7 +27,7 @@ namespace CommandHelper.Data
 
 
             var result = _context.Tutorials.Where(x => x.TutorialName == tut.TutorialName && x.Difficulty == tut.Difficulty && x.IsActive == tut.IsActive).FirstOrDefault();
-            if (result == null)
+            if (result != null)
             {
                 _context.Tutorials.Add(tut);
 
